@@ -7,8 +7,8 @@ spring:
     config:
       server:
         git:
-          uri: file:///${user.home}/workspace/GDP/micro-services/configfirst
-          default-label: main
+          uri: https://github.com/molorane/cloud-configs-gdp-2023.git
+          cloneOnStart: true
   security:
     user:
       password: 1234 # the password which apps will use to access its configurations
