@@ -1,0 +1,8 @@
+server:
+  port: 1964
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
