@@ -1,4 +1,4 @@
-package com.blessing.rhino.controller;
+package com.blessing.lion.controller;
 
 import com.blessing.lion.config.AppProps;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -22,7 +22,7 @@ public class AppController {
     @GetMapping("rhino")
     @CircuitBreaker(name = "rhinoService", fallbackMethod = "fallback")
     public String callRhino() {
-        return  restTemplate.getForEntity("http://rhino/vendor", String.class).getBody();
+        return restTemplate.getForEntity("http://rhino/vendor", String.class).getBody();
     }
 
     public String fallback(Exception e) {
