@@ -1,4 +1,4 @@
-package com.blessing.lion.config;
+package com.blessing.rhino.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;

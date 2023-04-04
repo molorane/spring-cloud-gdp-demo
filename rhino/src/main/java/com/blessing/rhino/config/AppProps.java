@@ -1,4 +1,4 @@
-package com.blessing.lion.config;
+package com.blessing.rhino.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
