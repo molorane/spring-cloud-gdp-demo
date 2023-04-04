@@ -1,6 +1,6 @@
-package com.blessing.lion.controller;
+package com.blessing.rhino.controller;
 
-import com.blessing.lion.config.LionProps;
+import com.blessing.lion.config.AppProps;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,14 +9,14 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @AllArgsConstructor
-public class LionController {
+public class AppController {
 
-    final LionProps lionProps;
+    final AppProps appProps;
     private RestTemplate restTemplate;
 
     @GetMapping("vendor")
     public String getVendor() {
-        return lionProps.getVendor();
+        return appProps.getVendor();
     }
 
     @GetMapping("rhino")
