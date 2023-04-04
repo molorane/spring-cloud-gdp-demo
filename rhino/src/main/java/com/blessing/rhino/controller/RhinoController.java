@@ -1,6 +1,7 @@
 package com.blessing.rhino.controller;
 
 import com.blessing.rhino.config.RhinoProps;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,12 @@ public class RhinoController {
     }
 
     @GetMapping("lion")
+    @CircuitBreaker(name = "lionService", fallbackMethod = "fallback")
     public String callLion() {
-        return  restTemplate.getForEntity("http://lion/vendor", String.class).getBody();
+        return restTemplate.getForEntity("http://lion/vendor", String.class).getBody();
+    }
+
+    public String fallback(Exception e) {
+        return "Service not reachable";
     }
 }

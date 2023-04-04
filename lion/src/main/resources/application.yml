@@ -12,19 +12,6 @@ spring:
         max-attempts: 1
 ---
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      rhinoService:
-        register-health-indicator: true
-        automatic-transition-from-open-to-half-open-enabled: true
-        failure-rate-threshold: 50
-        minimum-number-of-calls: 5
-        permitted-number-of-calls-in-half-open-state: 3
-        sliding-window-size: 5
-        sliding-window-type: count_based
-        wait-duration-in-open-state: 5s
-
 # Local profile
 spring:
   config:
